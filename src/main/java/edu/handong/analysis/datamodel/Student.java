@@ -19,10 +19,8 @@ public class Student {
 		/*
 		 *  뭔지 모르겠지만 여기서 하는 일은
 		 * newRecord 라고 입력 받으면 이걸 ArrayList<Course> coursesTaken 에 넣는거
-		 * 
-		 * coursesTaken.add(newRecord);
 		 */
-		
+		 coursesTaken.add(newRecord);		
 	}
 	public HashMap<String,Integer> getSemestersByYearAndSemester(){
 		return semestersByYearAndSemester;

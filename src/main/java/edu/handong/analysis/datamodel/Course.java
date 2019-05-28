@@ -1,10 +1,12 @@
 package edu.handong.analysis.datamodel;
 
+import java.io.BufferedReader;
+
 public class Course {
 
 	private String studentId;
-	private  String yearMonthGraduated;
-	private  String firstMajor;
+	private String yearMonthGraduated;
+	private String firstMajor;
 	private String secondMajor;
 	private String courseCode;
 	private String courseName;
@@ -13,12 +15,36 @@ public class Course {
 	private int semesterCourseTaken;
 
 	 Course(String line){
-		 //TODO DO SOMETHING..
-		 /*
-		  * 스트링을 받으면 아까처럼 ,로 구분된 하나의 문자열이 들어오게 된다.
-		  * 여기서, 컴마마다 구분해서 각 데이터들을 studentId 부터 semeseterCourseTaken 까지 차곡차곡 넣어주면 끝!
-		  * 5번에서 참조하면 됨.
-		  */
+		 
+		 char comma;
+		 comma = hw5data.indexof(",");
+		 
+		 studentId = Integer.parseInt(hw5data.substr(0, comma));
+		 
+		 hw5data = hw5data.substring(comma+1, hw5data.length()-1);
+		 yearMonthGraduated = Integer.parseInt(hw5data.substr(0, comma));
+		 
+		 hw5data = hw5data.substring(comma+1, hw5data.length()-1);
+		 firstMajor = Integer.parseInt(hw5data.substr(0, comma));
+		 
+		 hw5data = hw5data.substring(comma+1, hw5data.length()-1);
+		 secondMajor = Integer.parseInt(hw5data.substr(0, comma));
+		 
+		 hw5data = hw5data.substring(comma+1, hw5data.length()-1);
+		 courseCode = Integer.parseInt(hw5data.substr(0, comma));
+		 
+		 hw5data = hw5data.substring(comma+1, hw5data.length()-1);
+		 courseName = Integer.parseInt(hw5data.substr(0, comma));
+		 
+		 hw5data = hw5data.substring(comma+1, hw5data.length()-1);
+		 courseCredit = Integer.parseInt(hw5data.substr(0, comma));
+		 
+		 hw5data = hw5data.substring(comma+1, hw5data.length()-1);
+		 yearTaken = Integer.parseInt(hw5data.substr(0, comma));
+		 
+		 hw5data = hw5data.substring(comma+1, hw5data.length()-1);
+		 semesterCourseTaken = Integer.parseInt(hw5data.substr(0, comma));
+		 
 	 }
 
 	public String getStudentId() {
